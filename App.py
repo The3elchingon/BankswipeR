@@ -5,7 +5,9 @@ def parse_transactions(text):
 
     lines = text.strip().split("\n")
     transactions = []
-
+# Show OCR text output (for debugging)
+st.markdown("### 🔍 Raw OCR Output (for review)")
+st.text(text[:2000])  # Show first 2000 characters
     # Pattern: MM/DD   Card Purchase   MM/DD Description   Amount
     pattern = re.compile(r"^(\d{2}/\d{2})\s+(.*?)\s{2,}(\d{2}/\d{2})\s+(.*?)\s+(\d{1,3}(?:,\d{3})*(?:\.\d{2})?)$")
 
